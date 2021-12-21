@@ -1,5 +1,5 @@
 
-function noRepeatNumber(min,max){
+const noRepeatNumber=(min,max)=>{
     const numbers=[];
     while (numbers.length < 5) {
         const random=Math.floor( Math.random() * (max-min) + min);
@@ -27,8 +27,8 @@ let clock=setTimeout(function(){
    setTimeout(function(){
     while (count < 5) {
         userNumber=parseInt(prompt("inserisci i numeri che hai appena visto"));
-        if (isNaN(userNumber)) {
-            alert("devi inserire dei numeri!");
+        if (isNaN(userNumber) || userNumber > 999) {
+            alert("devi inserire dei numeri fino ad un massimo di 999!");
             count--;
         }
          if (randomNumber.includes(userNumber)) {
@@ -39,5 +39,6 @@ let clock=setTimeout(function(){
     }
     alert(`hai totalizzato ${howMany} ed hai indovinato i numeri: ${whichNumber}`)
    },1000)
-},5000);
+},10000);
+
 
