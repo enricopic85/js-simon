@@ -12,7 +12,7 @@ function noRepeatNumber(min,max){
 let randomNumber=noRepeatNumber(1,999);
 let number=document.getElementById("number");
 let count=0;
-let userNumber=[];
+let userNumber;
 let howMany=0;
 let whichNumber=[];
 for(i=0; i < randomNumber.length;i++){
@@ -26,13 +26,14 @@ let clock=setTimeout(function(){
    number.innerHTML='';
    setTimeout(function(){
     while (count < 5) {
-        userNumber[count] =parseInt(prompt("inserisci i numeri che hai appena visto"));
+        userNumber=parseInt(prompt("inserisci i numeri che hai appena visto"));
          if (randomNumber.includes(userNumber)) {
              whichNumber.push(userNumber);
              howMany++;
          }
          count++;
     }
+    alert(`hai totalizzato ${howMany} ed hai indovinato i numeri: ${whichNumber}`)
    },1000)
-},5000);
+},30000);
 
