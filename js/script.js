@@ -27,6 +27,10 @@ let clock=setTimeout(function(){
    setTimeout(function(){
     while (count < 5) {
         userNumber=parseInt(prompt("inserisci i numeri che hai appena visto"));
+        if (isNaN(userNumber)) {
+            alert("devi inserire dei numeri!");
+            count--;
+        }
          if (randomNumber.includes(userNumber)) {
              whichNumber.push(userNumber);
              howMany++;
@@ -35,5 +39,5 @@ let clock=setTimeout(function(){
     }
     alert(`hai totalizzato ${howMany} ed hai indovinato i numeri: ${whichNumber}`)
    },1000)
-},30000);
+},5000);
 
