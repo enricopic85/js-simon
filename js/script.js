@@ -18,7 +18,7 @@ let whichNumber=[];
 for(i=0; i < randomNumber.length;i++){
     let box=document.createElement('div');
     box.classList.add('box');
-    number.append(box)
+    number.append(box);
     box.innerHTML=randomNumber[i];
 }
 
@@ -27,14 +27,12 @@ let clock=setTimeout(function(){
    setTimeout(function(){
     while (count < 5) {
         userNumber[count] =parseInt(prompt("inserisci i numeri che hai appena visto"));
-        count++;
-        if (userNumber.includes(randomNumber)) {
-            whichNumber.push(randomNumber);
-            howMany++;
-        }
+         if (randomNumber.includes(userNumber)) {
+             whichNumber.push(userNumber);
+             howMany++;
+         }
+         count++;
     }
    },1000)
 },5000);
-
-
 
