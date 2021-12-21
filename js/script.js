@@ -28,13 +28,13 @@ let clock=setTimeout(function(){
     while (count < 5) {
         userNumber[count] =parseInt(prompt("inserisci i numeri che hai appena visto"));
         count++;
+        if (userNumber.includes(randomNumber)) {
+            whichNumber.push(randomNumber);
+            howMany++;
+        }
     }
    },1000)
 },5000);
 
-if (userNumber.includes(randomNumber)) {
-    whichNumber.push(randomNumber);
-    howMany++;
-    alert(`hai indovato ${howMany} numeri, esattamente questi: ${whichNumber}`)
-}
+
 
